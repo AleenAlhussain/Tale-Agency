@@ -1,0 +1,92 @@
+/* Extensions for the web application: divisions, products, saved forms.
+   Only the original tokens are used (copper, serif, hairlines, ease), so new parts read as the same design. */
+
+/* ---------- four divisions ---------- */
+.steps.four{grid-template-columns:repeat(4,minmax(0,1fr))}
+.divlink{display:block;color:inherit;transition:background .5s var(--ease)}
+.divlink h3{transition:color .4s}
+.divlink h3{line-height:1.25}
+.divlink .divmore{display:inline-flex;gap:10px;margin-top:22px;color:var(--copper)}
+.divlink .divmore .ar{transition:transform .5s var(--ease)}
+.divlink:hover h3,.divlink.on h3{color:var(--copper)}
+.divlink:hover .divmore .ar{transform:translateX(6px)}
+.divlink.on .no{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:8px}
+@media (max-width:1000px){.steps.four{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.steps.four{grid-template-columns:1fr}}
+
+/* ---------- products ---------- */
+.prods{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2vw,26px);margin-top:clamp(40px,5vw,70px)}
+.prod{position:relative;display:grid;align-content:start;gap:14px;padding:clamp(24px,3vw,40px);border:1px solid var(--line);border-radius:4px;background:var(--bg2);color:inherit;overflow:hidden;transition:border-color .5s,transform .8s var(--ease)}
+.prod::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;background:var(--copper);transform:scaleX(0);transform-origin:left;transition:transform 1s var(--ease)}
+.prod:hover{border-color:var(--line2);transform:translateY(-3px)}
+.prod:hover::after{transform:scaleX(1)}
+.prod>.caps{color:var(--mute)}
+.prod h3{margin:0;font-size:clamp(34px,4vw,60px);line-height:1;color:var(--head)}
+.prod p{margin:0;max-width:44ch;color:var(--soft);font-weight:300}
+.prod .status{display:inline-flex;align-items:center;gap:10px;margin-top:8px;color:var(--copper)}
+.prod .status i,.avail2.dev i{width:8px;height:8px;border-radius:50%;background:var(--copper);box-shadow:0 0 0 0 rgba(183,117,54,.5);animation:ping 2s infinite}
+.prods.big .prod{min-height:clamp(260px,26vw,380px);align-content:space-between}
+@media (max-width:760px){.prods{grid-template-columns:1fr}}
+
+/* ---------- capability grids ---------- */
+.rules.caps-grid{grid-template-columns:repeat(4,minmax(0,1fr));row-gap:clamp(30px,4vw,54px);margin-top:0}
+.rules.caps-grid h3{margin:14px 0 0;font-family:var(--serif);font-weight:400;font-size:clamp(20px,1.8vw,26px);line-height:1.2;color:var(--head)}
+@media (max-width:1000px){.rules.caps-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.rules.caps-grid{grid-template-columns:1fr}}
+.statusnote{margin-top:clamp(30px,4vw,50px);max-width:60ch}
+
+/* ---------- division: deliverables (dark) ---------- */
+.divdeliv{padding-bottom:clamp(80px,10vw,150px)}
+.divdeliv .tools-used{margin-top:clamp(34px,4vw,56px)}
+.divdeliv .tools-used>.caps{color:var(--copper)}
+.divdeliv .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.divdeliv .chips span{border:1px solid var(--line-dk);border-radius:999px;padding:6px 11px 6px 13px;font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--text-dk)}
+
+/* ---------- division: investment + neighbours ---------- */
+.divbtns{display:flex;flex-wrap:wrap;gap:10px;margin-top:clamp(30px,4vw,50px)}
+.divstart .price{margin:0;max-width:30ch;font-size:clamp(26px,3.2vw,48px);line-height:1.2;color:var(--head)}
+.divnav{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:clamp(60px,8vw,120px);padding-top:22px;border-top:1px solid var(--line)}
+.divnav a{color:var(--mute);transition:color .3s}
+.divnav a:hover{color:var(--copper)}
+@media (max-width:700px){.divnav{flex-direction:column}}
+
+/* ---------- product: principles + waitlist ---------- */
+#principles .aud{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end;max-width:52ch}
+#principles .aud span{border:1px solid var(--line2);border-radius:999px;padding:6px 11px 6px 13px;font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--text)}
+@media (max-width:860px){#principles .aud{justify-content:flex-start}}
+.waith{margin:0 0 20px;font-size:clamp(46px,6vw,96px);line-height:.95}
+.lead-s{margin:0;max-width:46ch;color:var(--soft);font-weight:300;font-size:16px;line-height:1.75}
+.waitform{position:relative}
+.waitform .lead-s{margin-bottom:6px}
+
+/* ---------- saved forms ---------- */
+.form .note.err,.scopeform .err{color:#B4462E}
+:root[data-theme="dark"] .form .note.err,:root[data-theme="dark"] .scopeform .err{color:#E58C6E}
+.form button[disabled],.scopeform button[disabled]{opacity:.5;cursor:default}
+.scopeform{position:relative;display:grid;gap:10px;margin-top:8px}
+.scopeform>.btn2{width:100%}
+.scopeform form{display:grid;gap:12px;padding-top:16px;border-top:1px solid var(--line)}
+.scopeform form>.caps{color:var(--copper)}
+.scopeform .two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.scopeform .fld input,.scopeform .fld textarea{font-size:14px}
+.scopeform textarea{min-height:70px}
+.scopeform .row2{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.scopeform .row2 .linkbtn{margin:0}
+.scopeform.done{padding:16px 0 4px;border-top:1px solid var(--line)}
+.scopeform.done .caps{color:var(--copper)}
+.scopeform.done p{margin:0;font-size:13px;line-height:1.6;color:var(--soft)}
+@media (max-width:420px){.scopeform .two{grid-template-columns:1fr}}
+
+/* ---------- not found ---------- */
+.nf{min-height:70svh;display:grid;align-content:center}
+.nf>.wrap{width:100%}
+.nf h1{margin:18px 0 26px;font-family:var(--serif);font-weight:400;font-size:clamp(60px,10vw,160px);line-height:.9;color:var(--head)}
+.nf h1 em{color:var(--copper)}
+
+/* ---------- header: one more page (Products) in the same bar ----------
+   The wordmark stays centred: the clock steps aside first, then the links tighten, then the menu takes over. */
+@media (max-width:1560px){.bar .clock{display:none}}
+@media (max-width:1440px){.nav{gap:16px}.nav a{letter-spacing:.22em}}
+@media (max-width:1366px){.nav{gap:13px}.nav a{letter-spacing:.18em}}
+@media (max-width:1280px){.nav{gap:11px}.nav a{letter-spacing:.14em}}
+@media (max-width:1200px){.nav{display:none}.menu-btn{display:grid}}

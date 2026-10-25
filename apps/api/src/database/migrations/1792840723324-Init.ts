@@ -1,0 +1,29 @@
+/* Initial schema: admin users, leads, quote requests, waitlists and portfolio content. Generated from the entities with typeorm migration:generate. */
+import { MigrationInterface, QueryRunner } from "typeorm";
+
+export class Init1792840723324 implements MigrationInterface {
+    name = 'Init1792840723324'
+
+    public async up(queryRunner: QueryRunner): Promise<void> {
+        await queryRunner.query(`CREATE TABLE "admin_users" ("id" uuid NOT NULL DEFAULT gen_random_uuid(), "email" character varying(254) NOT NULL, "name" character varying(120) NOT NULL DEFAULT '', "password_hash" character varying(100) NOT NULL, "role" character varying(20) NOT NULL DEFAULT 'owner', "last_login_at" TIMESTAMP WITH TIME ZONE, "created_at" TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(), CONSTRAINT "UQ_dcd0c8a4b10af9c986e510b9ecc" UNIQUE ("email"), CONSTRAINT "PK_06744d221bb6145dc61e5dc441d" PRIMARY KEY ("id"))`);
+        await queryRunner.query(`CREATE TABLE "leads" ("id" uuid NOT NULL DEFAULT gen_random_uuid(), "ref" character varying(16) NOT NULL, "name" character varying(120) NOT NULL, "email" character varying(254) NOT NULL, "phone" character varying(40), "company" character varying(160), "budget" character varying(40), "services" text array NOT NULL DEFAULT '{}', "division" character varying(20), "message" text NOT NULL, "source" character varying(200), "status" character varying(20) NOT NULL DEFAULT 'new', "notes" text NOT NULL DEFAULT '', "ip_hash" character varying(64), "user_agent" character varying(300), "created_at" TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(), "updated_at" TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(), CONSTRAINT "UQ_a26537c0c249a37d9b3429ae537" UNIQUE ("ref"), CONSTRAINT "PK_cd102ed7a9a4ca7d4d8bfeba406" PRIMARY KEY ("id"))`);
+        await queryRunner.query(`CREATE INDEX "leads_status_created_idx" ON "leads" ("status", "created_at") `);
+        await queryRunner.query(`CREATE TABLE "quote_requests" ("id" uuid NOT NULL DEFAULT gen_random_uuid(), "ref" character varying(16) NOT NULL, "name" character varying(120) NOT NULL, "email" character varying(254) NOT NULL, "phone" character varying(40), "company" character varying(160), "message" text NOT NULL DEFAULT '', "selection" jsonb NOT NULL, "lines" jsonb NOT NULL, "one_off_aed" integer NOT NULL, "monthly_aed" integer NOT NULL, "term_months" integer NOT NULL, "total_aed" integer NOT NULL, "deposit_aed" integer NOT NULL, "has_quote_items" boolean NOT NULL DEFAULT false, "has_from_prices" boolean NOT NULL DEFAULT false, "view_currency" character varying(3) NOT NULL DEFAULT 'AED', "status" character varying(20) NOT NULL DEFAULT 'new', "notes" text NOT NULL DEFAULT '', "ip_hash" character varying(64), "created_at" TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(), "updated_at" TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(), CONSTRAINT "UQ_f7adff55fed987c7e761e407c35" UNIQUE ("ref"), CONSTRAINT "PK_c05f72de8be0ec6b0985a851558" PRIMARY KEY ("id"))`);
+        await queryRunner.query(`CREATE INDEX "quotes_status_created_idx" ON "quote_requests" ("status", "created_at") `);
+        await queryRunner.query(`CREATE TABLE "waitlist_entries" ("id" uuid NOT NULL DEFAULT gen_random_uuid(), "product" character varying(30) NOT NULL, "email" character varying(254) NOT NULL, "name" character varying(120), "company" character varying(160), "country" character varying(60), "use_case" character varying(500), "ip_hash" character varying(64), "created_at" TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(), CONSTRAINT "waitlist_product_email_uq" UNIQUE ("product", "email"), CONSTRAINT "PK_bd0ef66fff81d3be7b7a1568a4d" PRIMARY KEY ("id"))`);
+        await queryRunner.query(`CREATE TABLE "case_studies" ("id" uuid NOT NULL DEFAULT gen_random_uuid(), "slug" character varying(60) NOT NULL, "title" character varying(160) NOT NULL, "summary" character varying(300) NOT NULL, "category" character varying(60) NOT NULL, "cover" character varying(200) NOT NULL, "cover_position" character varying(40) NOT NULL DEFAULT '50% 50%', "peek" character varying(200), "peek_video" character varying(200), "items" jsonb NOT NULL DEFAULT '[]', "sort_order" integer NOT NULL DEFAULT '0', "published" boolean NOT NULL DEFAULT true, "featured" boolean NOT NULL DEFAULT true, "created_at" TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(), "updated_at" TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(), CONSTRAINT "UQ_257998c57ee734fa61666e62421" UNIQUE ("slug"), CONSTRAINT "PK_18a30cb83a1df4d8df5ddc6b39e" PRIMARY KEY ("id"))`);
+        await queryRunner.query(`CREATE TABLE "archive_projects" ("id" uuid NOT NULL DEFAULT gen_random_uuid(), "slug" character varying(60) NOT NULL, "title" character varying(160) NOT NULL, "subtitle" character varying(300) NOT NULL DEFAULT '', "behance_path" character varying(300) NOT NULL, "cover" character varying(300) NOT NULL, "category" character varying(10) NOT NULL, "views" integer NOT NULL DEFAULT '0', "inner_image" character varying(300), "client" character varying(60), "sort_order" integer NOT NULL DEFAULT '0', "published" boolean NOT NULL DEFAULT true, "created_at" TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(), "updated_at" TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now(), CONSTRAINT "UQ_5e4e8eb9b108b2e68435d6fbb78" UNIQUE ("slug"), CONSTRAINT "PK_9db51c7925c25bc400e50796ce3" PRIMARY KEY ("id"))`);
+    }
+
+    public async down(queryRunner: QueryRunner): Promise<void> {
+        await queryRunner.query(`DROP TABLE "archive_projects"`);
+        await queryRunner.query(`DROP TABLE "case_studies"`);
+        await queryRunner.query(`DROP TABLE "waitlist_entries"`);
+        await queryRunner.query(`DROP INDEX "public"."quotes_status_created_idx"`);
+        await queryRunner.query(`DROP TABLE "quote_requests"`);
+        await queryRunner.query(`DROP INDEX "public"."leads_status_created_idx"`);
+        await queryRunner.query(`DROP TABLE "leads"`);
+        await queryRunner.query(`DROP TABLE "admin_users"`);
+    }
+
+}

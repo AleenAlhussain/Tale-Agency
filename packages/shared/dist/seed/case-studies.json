@@ -1,0 +1,316 @@
+[
+    {
+        "slug": "avara",
+        "title": "Avara Resorts & Sanctuaries",
+        "summary": "Brand book · collection architecture · social · film",
+        "category": "Hospitality",
+        "cover": "avara/10",
+        "coverPosition": "50% 50%",
+        "peek": "avara/01",
+        "peekVideo": null,
+        "items": [
+            {
+                "src": "/assets/img/work/avara/01.webp",
+                "th": "/assets/img/work/avara/01-t.webp",
+                "cap": "Brand book · Luxury edition"
+            },
+            {
+                "src": "/assets/img/work/avara/02.webp",
+                "th": "/assets/img/work/avara/02-t.webp",
+                "cap": "A ritual of renewal"
+            },
+            {
+                "src": "/assets/img/work/avara/03.webp",
+                "th": "/assets/img/work/avara/03-t.webp",
+                "cap": "Thrive with community"
+            },
+            {
+                "src": "/assets/img/work/avara/04.webp",
+                "th": "/assets/img/work/avara/04-t.webp",
+                "cap": "Experiences · rich stories"
+            },
+            {
+                "src": "/assets/img/work/avara/05.webp",
+                "th": "/assets/img/work/avara/05-t.webp",
+                "cap": "The Avara collection"
+            },
+            {
+                "src": "/assets/img/work/avara/06.webp",
+                "th": "/assets/img/work/avara/06-t.webp",
+                "cap": "Legends of Avara"
+            },
+            {
+                "src": "/assets/img/work/avara/07.webp",
+                "th": "/assets/img/work/avara/07-t.webp",
+                "cap": "Avara Resorts"
+            },
+            {
+                "src": "/assets/img/work/avara/08.webp",
+                "th": "/assets/img/work/avara/08-t.webp",
+                "cap": "Interiors"
+            },
+            {
+                "src": "/assets/img/work/avara/09.webp",
+                "th": "/assets/img/work/avara/09-t.webp",
+                "cap": "Avara Vicus"
+            },
+            {
+                "src": "/assets/img/work/avara/10.webp",
+                "th": "/assets/img/work/avara/10-t.webp",
+                "cap": "Legends · the villa"
+            },
+            {
+                "src": "/assets/img/work/avara/11.webp",
+                "th": "/assets/img/work/avara/11-t.webp",
+                "cap": "Campaign portrait"
+            },
+            {
+                "src": "/assets/img/work/avara/12.webp",
+                "th": "/assets/img/work/avara/12-t.webp",
+                "cap": "Our collection"
+            },
+            {
+                "src": "assets/img/grids/grid-07.webp",
+                "th": "assets/img/grids/grid-07.webp",
+                "cap": "Legend of Avara · social identity"
+            },
+            {
+                "vid": "/assets/video/reel-02.mp4",
+                "poster": "/assets/video/reel-02.jpg",
+                "th": "/assets/video/reel-02.jpg",
+                "cap": "Brand film"
+            }
+        ],
+        "sortOrder": 0,
+        "published": true,
+        "featured": true
+    },
+    {
+        "slug": "hamilton",
+        "title": "Hamilton Capital Partners",
+        "summary": "Identity · motion · stationery · web",
+        "category": "Finance",
+        "cover": "hamilton/01",
+        "coverPosition": "50% 45%",
+        "peek": null,
+        "peekVideo": "hamilton-07",
+        "items": [
+            {
+                "vid": "/assets/video/hamilton-07.mp4",
+                "poster": "/assets/video/hamilton-07.jpg",
+                "th": "/assets/video/hamilton-07.jpg",
+                "cap": "Logo reveal"
+            },
+            {
+                "vid": "/assets/video/hamilton-02.mp4",
+                "poster": "/assets/video/hamilton-02.jpg",
+                "th": "/assets/video/hamilton-02.jpg",
+                "cap": "Wordmark & symbol"
+            },
+            {
+                "src": "/assets/img/work/hamilton/01.webp",
+                "th": "/assets/img/work/hamilton/01-t.webp",
+                "cap": "The griffin"
+            },
+            {
+                "src": "/assets/img/work/hamilton/02.webp",
+                "th": "/assets/img/work/hamilton/02-t.webp",
+                "cap": "Construction"
+            },
+            {
+                "vid": "/assets/video/hamilton-03.mp4",
+                "poster": "/assets/video/hamilton-03.jpg",
+                "th": "/assets/video/hamilton-03.jpg",
+                "cap": "Colour system"
+            },
+            {
+                "src": "/assets/img/work/hamilton/03.webp",
+                "th": "/assets/img/work/hamilton/03-t.webp",
+                "cap": "Stationery"
+            },
+            {
+                "vid": "/assets/video/hamilton-06.mp4",
+                "poster": "/assets/video/hamilton-06.jpg",
+                "th": "/assets/video/hamilton-06.jpg",
+                "cap": "Packaging & presentation"
+            },
+            {
+                "vid": "/assets/video/hamilton-04.mp4",
+                "poster": "/assets/video/hamilton-04.jpg",
+                "th": "/assets/video/hamilton-04.jpg",
+                "cap": "Website"
+            },
+            {
+                "vid": "/assets/video/hamilton-05.mp4",
+                "poster": "/assets/video/hamilton-05.jpg",
+                "th": "/assets/video/hamilton-05.jpg",
+                "cap": "Brand values"
+            },
+            {
+                "vid": "/assets/video/hamilton-01.mp4",
+                "poster": "/assets/video/hamilton-01.jpg",
+                "th": "/assets/video/hamilton-01.jpg",
+                "cap": "Campaign posters"
+            }
+        ],
+        "sortOrder": 1,
+        "published": true,
+        "featured": true
+    },
+    {
+        "slug": "sakura",
+        "title": "Sakura Gardens",
+        "summary": "HRE Development · launch carousel & film",
+        "category": "Real estate",
+        "cover": "sakura/02",
+        "coverPosition": "50% 62%",
+        "peek": "sakura/01",
+        "peekVideo": null,
+        "items": [
+            {
+                "src": "/assets/img/work/sakura/01.webp",
+                "th": "/assets/img/work/sakura/01-t.webp",
+                "cap": "By calm."
+            },
+            {
+                "src": "/assets/img/work/sakura/02.webp",
+                "th": "/assets/img/work/sakura/02-t.webp",
+                "cap": "By thoughtful planning"
+            },
+            {
+                "src": "/assets/img/work/sakura/03.webp",
+                "th": "/assets/img/work/sakura/03-t.webp",
+                "cap": "A lifestyle shaped by restraint"
+            },
+            {
+                "src": "/assets/img/work/sakura/04.webp",
+                "th": "/assets/img/work/sakura/04-t.webp",
+                "cap": "Clarity and intention"
+            },
+            {
+                "vid": "/assets/video/reel-01.mp4",
+                "poster": "/assets/video/reel-01.jpg",
+                "th": "/assets/video/reel-01.jpg",
+                "cap": "Launch film"
+            }
+        ],
+        "sortOrder": 2,
+        "published": true,
+        "featured": true
+    },
+    {
+        "slug": "green",
+        "title": "Green Carat",
+        "summary": "Fine jewellery · Instagram grid direction",
+        "category": "Social",
+        "cover": "green-carat/02",
+        "coverPosition": "50% 40%",
+        "peek": "green-carat/01",
+        "peekVideo": null,
+        "items": [
+            {
+                "src": "/assets/img/work/green-carat/01.webp",
+                "th": "/assets/img/work/green-carat/01-t.webp",
+                "cap": "Grid · discover"
+            },
+            {
+                "src": "/assets/img/work/green-carat/02.webp",
+                "th": "/assets/img/work/green-carat/02-t.webp",
+                "cap": "Grid · eternal"
+            },
+            {
+                "src": "/assets/img/work/green-carat/03.webp",
+                "th": "/assets/img/work/green-carat/03-t.webp",
+                "cap": "Grid · radiance"
+            }
+        ],
+        "sortOrder": 3,
+        "published": true,
+        "featured": true
+    },
+    {
+        "slug": "nava",
+        "title": "NAVA",
+        "summary": "Visual identity & brand development",
+        "category": "Branding",
+        "cover": "nava/01",
+        "coverPosition": "50% 50%",
+        "peek": null,
+        "peekVideo": null,
+        "items": [
+            {
+                "src": "/assets/img/work/nava/01.webp",
+                "th": "/assets/img/work/nava/01-t.webp",
+                "cap": "Identity"
+            }
+        ],
+        "sortOrder": 4,
+        "published": true,
+        "featured": true
+    },
+    {
+        "slug": "apex",
+        "title": "Apex Golf",
+        "summary": "Home of modern golf · identity & social",
+        "category": "Branding",
+        "cover": "apex/02",
+        "coverPosition": "50% 50%",
+        "peek": "apex/01",
+        "peekVideo": null,
+        "items": [
+            {
+                "src": "/assets/img/work/apex/02.webp",
+                "th": "/assets/img/work/apex/02-t.webp",
+                "cap": "Social club grid"
+            },
+            {
+                "src": "/assets/img/work/apex/01.webp",
+                "th": "/assets/img/work/apex/01-t.webp",
+                "cap": "Brand world"
+            }
+        ],
+        "sortOrder": 5,
+        "published": true,
+        "featured": true
+    },
+    {
+        "slug": "avantcha",
+        "title": "AVANTCHA",
+        "summary": "Tea bar & shop, Dubai · Ramadan menu",
+        "category": "F&B",
+        "cover": "avantcha/01",
+        "coverPosition": "50% 50%",
+        "peek": null,
+        "peekVideo": null,
+        "items": [
+            {
+                "src": "/assets/img/work/avantcha/01.webp",
+                "th": "/assets/img/work/avantcha/01-t.webp",
+                "cap": "Ramadan menu"
+            }
+        ],
+        "sortOrder": 6,
+        "published": true,
+        "featured": true
+    },
+    {
+        "slug": "nhu",
+        "title": "Nhu Design Studio",
+        "summary": "Brand values · Pillars of purpose",
+        "category": "Branding",
+        "cover": "nhu/01",
+        "coverPosition": "50% 50%",
+        "peek": null,
+        "peekVideo": null,
+        "items": [
+            {
+                "src": "/assets/img/work/nhu/01.webp",
+                "th": "/assets/img/work/nhu/01-t.webp",
+                "cap": "Pillars of purpose"
+            }
+        ],
+        "sortOrder": 7,
+        "published": true,
+        "featured": true
+    }
+]

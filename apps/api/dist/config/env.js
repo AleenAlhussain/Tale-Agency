@@ -1,0 +1,66 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.APP_CONFIG = void 0;
+exports.loadConfig = loadConfig;
+const crypto_1 = require("crypto");
+function bool(v, d) {
+    if (v === undefined || v === '')
+        return d;
+    return ['1', 'true', 'yes', 'on'].includes(v.toLowerCase());
+}
+function loadConfig(env = process.env) {
+    const nodeEnv = env.NODE_ENV || 'development';
+    const isProd = nodeEnv === 'production';
+    const problems = [];
+    const databaseUrl = env.DATABASE_URL ||
+        (env.POSTGRES_HOST
+            ? `postgres://${encodeURIComponent(env.POSTGRES_USER || 'talal')}:${encodeURIComponent(env.POSTGRES_PASSWORD || '')}@${env.POSTGRES_HOST}:${env.POSTGRES_PORT || 5432}/${env.POSTGRES_DB || 'talal_at'}`
+            : '');
+    if (!databaseUrl)
+        problems.push('DATABASE_URL (or POSTGRES_HOST, POSTGRES_USER, POSTGRES_PASSWORD, POSTGRES_DB) is required');
+    let jwtSecret = env.JWT_SECRET || '';
+    if (jwtSecret.length < 32) {
+        if (isProd)
+            problems.push('JWT_SECRET must be at least 32 characters in production');
+        else
+            jwtSecret = (0, crypto_1.randomBytes)(32).toString('hex');
+    }
+    const adminPassword = env.ADMIN_PASSWORD || null;
+    if (isProd && adminPassword && adminPassword.length < 12)
+        problems.push('ADMIN_PASSWORD must be at least 12 characters in production');
+    if (problems.length)
+        throw new Error('Invalid configuration:\n - ' + problems.join('\n - '));
+    const smtpHost = env.SMTP_HOST || '';
+    return {
+        nodeEnv,
+        isProd,
+        port: Number(env.PORT || env.API_PORT || 4000),
+        databaseUrl,
+        databaseSsl: bool(env.DATABASE_SSL, false),
+        migrationsRun: bool(env.MIGRATIONS_RUN, true),
+        jwtSecret,
+        ipSalt: env.IP_SALT || jwtSecret,
+        cookieSecure: bool(env.COOKIE_SECURE, isProd),
+        corsOrigins: (env.CORS_ORIGINS || 'http://localhost:3000').split(',').map((s) => s.trim()).filter(Boolean),
+        adminEmail: env.ADMIN_EMAIL ? env.ADMIN_EMAIL.toLowerCase().trim() : null,
+        adminPassword,
+        adminPasswordReset: bool(env.ADMIN_PASSWORD_RESET, false),
+        swagger: bool(env.SWAGGER_ENABLED, !isProd),
+        throttleLimit: Number(env.THROTTLE_LIMIT || 120),
+        formThrottleLimit: Number(env.FORM_THROTTLE_LIMIT || 6),
+        paymentLink: env.PAYMENT_LINK || '',
+        notifyEmail: env.NOTIFY_EMAIL || 'talalatallah10@gmail.com',
+        smtp: smtpHost
+            ? {
+                host: smtpHost,
+                port: Number(env.SMTP_PORT || 587),
+                user: env.SMTP_USER || '',
+                pass: env.SMTP_PASS || '',
+                from: env.SMTP_FROM || 'TALAL·AT <no-reply@talal.at>',
+                secure: bool(env.SMTP_SECURE, false),
+            }
+            : null,
+    };
+}
+exports.APP_CONFIG = 'APP_CONFIG';
+//# sourceMappingURL=env.js.map

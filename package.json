@@ -1,0 +1,17 @@
+{
+  "name": "talal-at",
+  "version": "1.0.0",
+  "private": true,
+  "description": "TALAL·AT web application: Next.js front end, NestJS API, PostgreSQL, Docker.",
+  "workspaces": ["packages/*", "apps/*"],
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "build:shared": "npm run build -w @talal-at/shared",
+    "build": "npm run build:shared && npm run build -w @talal-at/api && npm run build -w @talal-at/web",
+    "dev:api": "npm run start:dev -w @talal-at/api",
+    "dev:web": "npm run dev -w @talal-at/web",
+    "test": "npm run test -w @talal-at/api",
+    "db:migrate": "npm run migration:run -w @talal-at/api",
+    "db:seed": "npm run seed -w @talal-at/api"
+  }
+}

@@ -1,0 +1,23 @@
+# Front door. With SITE_ADDRESS=yourdomain.com Caddy gets and renews the HTTPS certificate on its own.
+# /api goes straight to the API; everything else goes to the website.
+{$SITE_ADDRESS::80} {
+	encode zstd gzip
+
+	handle /api/* {
+		reverse_proxy api:4000
+	}
+
+	handle {
+		reverse_proxy web:3000
+	}
+
+	header {
+		-Server
+		X-Content-Type-Options nosniff
+	}
+
+	log {
+		output stdout
+		format console
+	}
+}

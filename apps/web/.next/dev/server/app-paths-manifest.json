@@ -1,0 +1,8 @@
+{
+  "/(site)/page": "app/(site)/page.js",
+  "/(site)/products/[slug]/page": "app/(site)/products/[slug]/page.js",
+  "/(site)/products/page": "app/(site)/products/page.js",
+  "/(site)/services/page": "app/(site)/services/page.js",
+  "/admin/page": "app/admin/page.js",
+  "/api/[...path]/route": "app/api/[...path]/route.js"
+}
