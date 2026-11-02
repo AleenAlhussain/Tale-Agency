@@ -3,6 +3,7 @@
   "/(site)/products/[slug]/page": "app/(site)/products/[slug]/page.js",
   "/(site)/products/page": "app/(site)/products/page.js",
   "/(site)/services/page": "app/(site)/services/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
   "/admin/page": "app/admin/page.js",
   "/api/[...path]/route": "app/api/[...path]/route.js"
 }

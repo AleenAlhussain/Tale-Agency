@@ -15,6 +15,22 @@ jobs:
     permissions:
       contents: read #This is required for actions/checkout
 
+    # Throwaway database for the API e2e tests (matches apps/api/test/env.ts)
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_DB: talal_at_test
+          POSTGRES_USER: talal
+          POSTGRES_PASSWORD: talal_dev_pw
+        ports:
+          - 5433:5432
+        options: >-
+          --health-cmd "pg_isready -U talal -d talal_at_test"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 12
+
     steps:
       - uses: actions/checkout@v4
 
