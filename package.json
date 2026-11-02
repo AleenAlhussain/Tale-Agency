@@ -7,7 +7,9 @@
   "engines": { "node": ">=22" },
   "scripts": {
     "build:shared": "npm run build -w @talal-at/shared",
-    "build": "npm run build:shared && npm run build -w @talal-at/api && npm run build -w @talal-at/web",
+    "build": "npm run build:shared && npm run build -w @talal-at/api && npm run build -w @talal-at/web && npm run build:standalone",
+    "build:standalone": "node -e \"const fs=require('fs');fs.cpSync('apps/web/.next/static','apps/web/.next/standalone/apps/web/.next/static',{recursive:true});fs.cpSync('apps/web/public','apps/web/.next/standalone/apps/web/public',{recursive:true})\"",
+    "start": "node scripts/start.mjs",
     "dev:api": "npm run start:dev -w @talal-at/api",
     "dev:web": "npm run dev -w @talal-at/web",
     "test": "npm run test -w @talal-at/api",
